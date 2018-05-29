@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/etCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:ems="16"
+            android:focusable="false"
+            android:hint="Nome do Cliente">
+
+
+        </EditText>
+
+
+        <EditText
+            android:id="@+id/etEstabelecimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etCliente"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:hint="Nome do Estabelecimento "
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:id="@+id/datas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etEstabelecimento"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDataEncomenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Data da Encomenda"
+                android:layout_marginBottom="5dp"
+                android:textSize="18dp" />
+            <EditText
+                android:id="@+id/etDataEncomenda"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:ems="10"
+                android:hint="Data Encomenda"
+                android:layout_marginBottom="5dp"
+                android:inputType="date"
+                android:focusable="false" />
+
+            <TextView
+                android:id="@+id/tvDataEntrega"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Data da Entrega"
+                android:layout_marginBottom="5dp"
+                android:textSize="18dp" />
+            <EditText
+                android:id="@+id/etDataEntrega"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:ems="10"
+                android:hint="Data Entrega"
+                android:inputType="date"
+                android:focusable="false" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvProduto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/datas"
+            android:layout_marginTop="5dp"
+            android:text="Produto"
+            android:textSize="18dp" />
+
+        <Spinner
+            android:id="@+id/sProduto"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/tvProduto"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:hint="Produto"
+            android:spinnerMode="dropdown" />
+
+
+        <TextView
+            android:id="@+id/tvUnidadeMedida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sProduto"
+            android:layout_marginTop="5dp"
+            android:text="Unidade de Medida"
+            android:textSize="18dp" />
+
+        <Spinner
+            android:id="@+id/sUnidadeMedida"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/tvUnidadeMedida"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+        <EditText
+            android:id="@+id/etQuantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sUnidadeMedida"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:hint="Quantidade "
+            android:textColor="#000000"
+            android:inputType="numberDecimal"/>
+        <Button
+            android:id="@+id/btn_addProduto"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_h"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/sUnidadeMedida"
+            android:background="@color/info"
+            android:textColor="#fff"
+            android:padding="12dp"
+            android:text="+ add" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listViewEncomenda"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/etQuantidade"/>
+
+    <LinearLayout
+        android:id="@+id/actionButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/listViewEncomenda">
+<!--
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_h"
+            android:background="@color/worning"
+            android:text="Cancelar"
+            android:textColor="#fff"
+            android:layout_marginRight="2dp"
+            android:padding="12dp" />
+-->
+        <Button
+            android:id="@+id/btn_saveEncomenda"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_h"
+            android:background="@color/success"
+            android:paddingLeft="12dp"
+            android:text="Gravar"
+            android:textColor="#fff" />
+
+
+    </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/info"
+            android:text="Os dados serão gravavos permanentimente sem possibilidade de alteração"
+            android:layout_below="@id/actionButtonsLayout" />
+
+    </RelativeLayout>
+
+
+
+</ScrollView>
