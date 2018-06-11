@@ -34,8 +34,8 @@ public class EncomendaAdapter extends RecyclerView.Adapter<EncomendaAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        holder.tvProduto.setText(encomendas.get(position).getDescricaoProduto());
-        holder.tvUnidadeMedida.setText("U.M: "+encomendas.get(position).getUnidadeMedida());
+        holder.tvProduto.setText(encomendas.get(position).getDescricao_produto());
+        holder.tvUnidadeMedida.setText("U.M: "+encomendas.get(position).getUnidade_medida());
         holder.tvQtd.setText("QTD: "+encomendas.get(position).getQuantidade()+"");
         holder.delete.setImageResource(R.drawable.remove);
 
@@ -48,7 +48,7 @@ public class EncomendaAdapter extends RecyclerView.Adapter<EncomendaAdapter.View
                 pos = position;
                 encomendaDatabaseHelper.deleteEncomendas(encomendas.get(pos).getId());
 
-                Toast.makeText(context, encomendas.get(pos).getDescricaoProduto()+" "+encomendas.get(pos).getId()+" removido!", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, encomendas.get(pos).getDescricao_produto()+" removido!", Toast.LENGTH_LONG).show();
 
                 encomendas.remove(pos);
                 notifyItemRemoved(pos);

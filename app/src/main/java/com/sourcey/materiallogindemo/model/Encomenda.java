@@ -1,57 +1,43 @@
 package com.sourcey.materiallogindemo.model;
 
-import java.util.Date;
 
 public class Encomenda {
     private int id;
-    private Date dataEncomenda;
-    private Date dataEntrega;
-    private int clienteId;
-    private String nomeCliente;
+    private String data_encomenda;
+    private String data_entrega;
+    private String numero_transacao;
+    private String nuemro_item_transacao;
+    private int cliente_id;
+    private String nome_cliente;
     private String estabelecimento;
     private double quantidade;
     private boolean entregue;
     private boolean status;
     private String comentario;
-    private String unidadeMedida;
-    private int produtoId;
-    private String descricaoProduto;
+    private String unidade_medida;
+    private int produto_id;
+    private String descricao_produto;
     private int user_id;
 
     public Encomenda() {
     }
 
-    public Encomenda(Date dataEncomenda, Date dataEntrega, int clienteId, String nomeCliente, String estabelecimento, double quantidade, boolean entregue, boolean status, String comentario, String unidadeMedida, int produtoId, String descricaoProduto, int user_id) {
-        this.dataEncomenda = dataEncomenda;
-        this.dataEntrega = dataEntrega;
-        this.clienteId = clienteId;
+    public Encomenda(String data_encomenda, String data_entrega, String numero_transacao, String nuemro_item_transacao, int cliente_id, String nome_cliente, String estabelecimento, double quantidade, boolean entregue, boolean status, String comentario, String unidade_medida, int produto_id, String descricao_produto, int user_id) {
+        this.data_encomenda = data_encomenda;
+        this.data_entrega = data_entrega;
+        this.numero_transacao = numero_transacao;
+        this.nuemro_item_transacao = nuemro_item_transacao;
+        this.cliente_id = cliente_id;
+        this.nome_cliente = nome_cliente;
         this.estabelecimento = estabelecimento;
         this.quantidade = quantidade;
         this.entregue = entregue;
         this.status = status;
         this.comentario = comentario;
-        this.unidadeMedida = unidadeMedida;
-        this.produtoId = produtoId;
-        this.descricaoProduto = descricaoProduto;
+        this.unidade_medida = unidade_medida;
+        this.produto_id = produto_id;
+        this.descricao_produto = descricao_produto;
         this.user_id = user_id;
-        this.nomeCliente = nomeCliente;
-    }
-
-    public Encomenda(int id, Date dataEncomenda, Date dataEntrega, int clienteId, String nomeCliente, String estabelecimento, double quantidade, boolean entregue, boolean status, String comentario, String unidadeMedida, int produtoId, String descricaoProduto, int user_id) {
-        this.id = id;
-        this.dataEncomenda = dataEncomenda;
-        this.dataEntrega = dataEntrega;
-        this.clienteId = clienteId;
-        this.estabelecimento = estabelecimento;
-        this.quantidade = quantidade;
-        this.entregue = entregue;
-        this.status = status;
-        this.comentario = comentario;
-        this.unidadeMedida = unidadeMedida;
-        this.produtoId = produtoId;
-        this.descricaoProduto = descricaoProduto;
-        this.user_id = user_id;
-        this.nomeCliente = nomeCliente;
     }
 
     public int getId() {
@@ -62,36 +48,52 @@ public class Encomenda {
         this.id = id;
     }
 
-    public Date getDataEncomenda() {
-        return dataEncomenda;
+    public String getData_encomenda() {
+        return data_encomenda;
     }
 
-    public void setDataEncomenda(Date dataEncomenda) {
-        this.dataEncomenda = dataEncomenda;
+    public void setData_encomenda(String data_encomenda) {
+        this.data_encomenda = data_encomenda;
     }
 
-    public Date getDataEntrega() {
-        return dataEntrega;
+    public String getData_entrega() {
+        return data_entrega;
     }
 
-    public void setDataEntrega(Date dataEntrega) {
-        this.dataEntrega = dataEntrega;
+    public void setData_entrega(String data_entrega) {
+        this.data_entrega = data_entrega;
     }
 
-    public int getClienteId() {
-        return clienteId;
+    public String getNumero_transacao() {
+        return numero_transacao;
     }
 
-    public void setClienteId(int clienteId) {
-        this.clienteId = clienteId;
+    public void setNumero_transacao(String numero_transacao) {
+        this.numero_transacao = numero_transacao;
     }
 
-    public String getNomeCliente() {
-        return nomeCliente;
+    public String getNuemro_item_transacao() {
+        return nuemro_item_transacao;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setNuemro_item_transacao(String nuemro_item_transacao) {
+        this.nuemro_item_transacao = nuemro_item_transacao;
+    }
+
+    public int getCliente_id() {
+        return cliente_id;
+    }
+
+    public void setCliente_id(int cliente_id) {
+        this.cliente_id = cliente_id;
+    }
+
+    public String getNome_cliente() {
+        return nome_cliente;
+    }
+
+    public void setNome_cliente(String nome_cliente) {
+        this.nome_cliente = nome_cliente;
     }
 
     public String getEstabelecimento() {
@@ -134,28 +136,28 @@ public class Encomenda {
         this.comentario = comentario;
     }
 
-    public String getUnidadeMedida() {
-        return unidadeMedida;
+    public String getUnidade_medida() {
+        return unidade_medida;
     }
 
-    public void setUnidadeMedida(String unidadeMedida) {
-        this.unidadeMedida = unidadeMedida;
+    public void setUnidade_medida(String unidade_medida) {
+        this.unidade_medida = unidade_medida;
     }
 
-    public int getProdutoId() {
-        return produtoId;
+    public int getProduto_id() {
+        return produto_id;
     }
 
-    public void setProdutoId(int produtoId) {
-        this.produtoId = produtoId;
+    public void setProduto_id(int produto_id) {
+        this.produto_id = produto_id;
     }
 
-    public String getDescricaoProduto() {
-        return descricaoProduto;
+    public String getDescricao_produto() {
+        return descricao_produto;
     }
 
-    public void setDescricaoProduto(String descricaoProduto) {
-        this.descricaoProduto = descricaoProduto;
+    public void setDescricao_produto(String descricao_produto) {
+        this.descricao_produto = descricao_produto;
     }
 
     public int getUser_id() {
